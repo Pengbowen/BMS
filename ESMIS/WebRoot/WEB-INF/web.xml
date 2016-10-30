@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+    	<servlet-name>Uploader</servlet-name>
+    	<servlet-class>com.lanyuan.actionapi.commonupload.CommonUploadAction</servlet-class>
+    	<init-param>
+    		<param-name>uploadPath</param-name>
+    		<param-value>/uploadfiles/network</param-value>
+    	</init-param>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>Uploader</servlet-name>
+    	<url-pattern>/uploader</url-pattern>
+  	</servlet-mapping>
+  	
+    <filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>config.LanYuanStrutsFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+    
+    <!-- session有效时长 -->
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config> 
+
+	<welcome-file-list>
+		<welcome-file>home.action</welcome-file>
+	</welcome-file-list>
+
+	<!-- 异常错误全局处理，错误码：404/500分别跳转到错误页面 -->
+    <error-page>
+       <error-code>404</error-code>
+       <location>/page404.jsp</location>
+    </error-page>
+    <error-page>
+       <error-code>500</error-code>
+       <location>/error.jsp</location>
+    </error-page>
+    
+    
+    <display-name>mybatis</display-name>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:config/spring.xml,classpath:config/spring-mybatis.xml</param-value>
+	</context-param>
+	<filter>
+		<description>字符集过滤器</description>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<description>字符集编码</description>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<listener>
+		<description>spring监听器</description>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 防止spring内存溢出监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+</web-app>

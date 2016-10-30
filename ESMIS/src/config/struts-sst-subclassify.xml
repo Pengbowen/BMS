@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 体系表层项目 -->
+	<package name="subclassify" namespace="/sst" extends="GlobalInterceptor">
+		
+		<!-- 跳转到子分类页面-->
+		<action name="toSubClassifyManage" class="com.lanyuan.actionapi.sst.subclassify.ISearchSubClassifyAction" >
+			<result name="success">/SST/subclassify/subClassManage.jsp</result>
+		</action>
+		<!-- 搜索子分类 -->
+		<action name="loadSubClassify" class="com.lanyuan.actionapi.sst.subclassify.ISearchSubClassifyAction" method="loadData">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 跳转到编辑子分类 -->
+		<action name="modifySubClass" class="com.lanyuan.actionapi.sst.subclassify.IModifySubClassifyAction">
+		<result name="success">/SST/subclassify/modifySubClassify.jsp</result>
+		</action>
+		<!-- 保存子分类 -->
+		<action name="saveSubClass" class="com.lanyuan.actionapi.sst.subclassify.IModifySubClassifyAction" method="modifySubClassify">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 删除子分类 -->
+		<action name="deleteSubClass" class="com.lanyuan.actionapi.sst.subclassify.IDeleteSubClassAction">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 跳转到添加页面 -->
+		<action name="toAddSubClass" class="com.lanyuan.actionapi.sst.subclassify.IAddSubClassifyAction">
+		<result name="success" >/SST/subclassify/modifySubClassify.jsp</result>
+		</action>
+		<action name="addSubClass" class="com.lanyuan.actionapi.sst.subclassify.IAddSubClassifyAction" method="addSubClassify">
+		<result name="success" type="json"></result>
+		</action>		
+		<!-- 跳转到上传页面 -->
+		<action name="toUploadSubClass" class="com.lanyuan.actionapi.sst.subclassify.IBatchAddSubClassAction">
+		<result name="success" >/SST/subclassify/upload.jsp</result>
+		</action>
+		<!-- 下载模板 -->
+		<action name="downloadSubClass" class="com.lanyuan.actionapi.sst.subclassify.IDownloadAction">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 上传 -->
+		<action name="uploadSubClass" class="com.lanyuan.actionapi.sst.subclassify.IBatchAddSubClassAction" method="batchAdd">
+		<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

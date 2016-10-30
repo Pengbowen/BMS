@@ -1,0 +1,84 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<!-- 权限管理 -->
+<package name="permissionManage" namespace="/permissionManage" extends="GlobalInterceptor">
+   <!-- 获取角色列表页面 -->
+   <action name="show" class="com.lanyuan.web.permission.ShowPermissionAction">
+       <interceptor-ref name="GlobalInterceptorStack" />
+       <result name="success">/permission/limit_list.jsp</result>
+   </action>
+   <!-- 加载数据 -->
+   <action name="loadData" class="com.lanyuan.web.permission.ShowPermissionAction" method="loadData">
+       
+   </action>
+   <!-- 新增页面 -->
+   <action name="showAdd" class="com.lanyuan.web.permission.AddPermissionAction">
+       <result name="success">/permission/limit_add.jsp</result>
+   </action>
+   <action name="add" class="com.lanyuan.web.permission.AddPermissionAction" method="saveData">
+       
+   </action>
+   
+   <!-- 修改 -->
+   <action name="showModify" class="com.lanyuan.web.permission.ModifyPermissionAction">
+       <result name="success">/permission/limit_modify.jsp</result>
+   </action>
+   <action name="modify" class="com.lanyuan.web.permission.ModifyPermissionAction" method="modify">
+       
+   </action>
+  
+   <!-- 删除 --> 
+   <action name="delete" class="com.lanyuan.web.permission.EditPermissionAction" method="delete">
+       
+   </action>
+  
+   <!-- 启用停用 -->
+   <action name="eidtState" class="com.lanyuan.web.permission.EditPermissionAction" method="eidtState">
+       
+   </action>
+  
+</package>
+
+<!-- 角色 -->	
+<package name="roleManage" namespace="/roleManage" extends="GlobalInterceptor">
+   <!-- 获取角色列表页面 -->
+   <action name="show" class="com.lanyuan.web.permission.ShowRoleAction">
+       <interceptor-ref name="GlobalInterceptorStack" />
+       <result name="success">/permission/role_list.jsp</result>
+   </action>
+   <!-- 加载数据 -->
+   <action name="loadData" class="com.lanyuan.web.permission.ShowRoleAction" method="loadData">
+       
+   </action>
+   
+   <!-- 查看权限 -->
+   <action name="lookLimit" class="com.lanyuan.web.permission.ShowRoleLimitAction" method="lookLimit">
+       
+   </action>
+   <!-- 保存角色权限 -->
+   <action name="saveData" class="com.lanyuan.web.permission.SaveRoleLimitAction" method="saveData">
+       
+   </action>
+   <!-- 新增角色 -->
+   <action name="showAdd" class="com.lanyuan.web.permission.AddRoleAction">
+       <result name="success">/permission/role_add.jsp</result>
+   </action>
+   <action name="add" class="com.lanyuan.web.permission.AddRoleAction" method="saveAddData">
+       
+   </action>
+   <!-- 修改角色 -->
+   <action name="showModify" class="com.lanyuan.web.permission.ModifyRoleAction">
+       <result name="success">/permission/role_add.jsp</result>
+   </action>
+   <action name="modify" class="com.lanyuan.web.permission.ModifyRoleAction" method="saveModifyData">
+       
+   </action>
+   
+   <!-- 删除角色 -->
+   <action name="delete" class="com.lanyuan.web.permission.DeleteRoleAction" method="delete">
+       
+   </action>
+
+</package>
+
+</struts>

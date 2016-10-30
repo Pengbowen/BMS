@@ -1,0 +1,52 @@
+{
+    "modelId":"standardLibrary",
+    "fileName": "标准总库查询信息",
+    "path": "excelModel/standardLibrary.xls",
+    "starLine":2,
+    "columnTitle":[
+		{
+			"field" : "standardNo",
+			"title" : "标准编号",
+			"width" : "200",
+			"align" : "left",
+			"startcolumn":1,
+			"formatter" : ""
+		}, {
+			"field" : "standardName",
+			"title" : "标准名称",
+			"width" : "350",
+			"align" : "left",
+			"startcolumn":2,
+			"formatter" : ""
+		}, {
+			"field" : "oldStandardNo",
+			"title" : "代替标准",
+			"width" : "120",
+			"align" : "left",
+			"startcolumn":3,
+			"formatter" : ""
+		}, {
+			"field" : "standardCategoryName",
+			"title" : "标准类别",
+			"width" : "120",
+			"align" : "left",
+			"startcolumn":4,
+			"formatter" : ""
+		},{
+			"field" : "effectiveState",
+			"title" : "有效标记",
+			"width" : "120",
+			"align" : "center",
+			"startcolumn":5,
+			"formatter" : "showState1"
+		},{
+			"field" : "dataSource",
+			"title" : "数据来源",
+			"width" : "120",
+			"align" : "center",
+			"startcolumn":6,
+			"formatter" : "showDataSource1"
+		}
+		
+	]
+}

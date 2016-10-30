@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+ <!-- 将struts2交给spring管理-->
+    <constant name="struts.configuration.xml.reload" value="true"></constant>
+    <constant name="struts.action.extension" value="action,do,webwork"></constant>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+    <constant name="struts.devMode" value="true"></constant>
+    <constant name="struts.multipart.maxSize" value="100971520"></constant>
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+    <constant name="struts.objectFactory.spring.autoWire" value="name"></constant>
+    <constant name="struts.objectFactory" value="spring"></constant>
+	<package name="LoginVerify" namespace="/" extends="json-default">
+    	<global-results>
+	    	<result name="UnLogin">/index.jsp</result>
+	    	<result name="NoHasLimit">/index.jsp</result>
+    	</global-results>
+    </package>
+
+	<!-- 拦截器 -->
+	<package name="GlobalInterceptor" namespace="/" extends="LoginVerify">
+	   <interceptors>
+	   	<interceptor name="GlobalVerify" class="com.lanyuan.actionapi.interceptor.CustomInterceptor" />
+	   	<interceptor-stack name="GlobalInterceptorStack" >
+			<interceptor-ref name="GlobalVerify" />
+			<interceptor-ref name="defaultStack"/>
+	   	</interceptor-stack>
+	   </interceptors>  	   
+
+    </package>
+	<!-- 人员登录 -->
+	<include file="config/struts-systemuser.xml"/>
+    <!-- 权限、角色管理 -->
+    <include file="config/struts-permission.xml"/>
+    <!-- 单位管理 -->
+    <include file="config/struts-unit.xml"/>
+    <!-- 通用导出功能 -->
+    <include file="config/struts-commonexport.xml"/>
+    <!-- 体系表~项目管理-->
+    <include file="config/struts-sst-layeritems.xml"/>
+     <!-- 体系表~子分类管理-->
+    <include file="config/struts-sst-subclassify.xml"/>
+    <!-- 体系表~标准管理-->
+    <include file="config/struts-sst-standardlist.xml"/>
+     <!-- 体系表~权限管理-->
+    <include file="config/struts-sst-power.xml"/>
+     <!-- 法律法规管理功能-->
+    <include file="config/struts-lawslibrary.xml"/>
+    <!-- 友情链接 -->
+    <include file="config/struts-blogroll.xml"/>
+    <!-- 意见建议 -->
+    <include file="config/struts-answer.xml"/>
+    <!-- 知识库管理 -->
+    <include file="config/struts-netdisk.xml"/>
+    <!-- 标准总库管理 -->
+    <include file="config/struts-standardlibrary.xml"/>
+     <!-- 体系表~权限管理-->
+    <include file="config/struts-sst-power.xml"/>
+    <!-- 通知公告 -->
+    <include file="config/struts-notice.xml"/>
+	<!-- 查询下拉选项 -->
+	<include file="config/struts-dictionary.xml"/>
+    <!-- 企业方针目标 -->
+    <include file="config/struts-simplecontent.xml"/>
+    <!-- 发布生成报表-->
+    <include file="config/struts-standardrepor.xml"/>
+    <!-- 批量上传-->
+    <include file="config/struts-batchupload.xml"/>
+    <!-- 数据字典 -->
+    <include file="config/struts-dictionarynew.xml"/>
+    <!-- 前台-法律法规 -->
+    <include file="config/struts-face-laws.xml"></include>
+    <!-- 前台 -->
+    <include file="config/struts-web.xml"></include>
+    <!-- 资源库 -->
+    <include file="config/struts-resource.xml"></include>
+    
+</struts>

@@ -1,0 +1,20 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="commonexport" namespace="/commonexport" extends="GlobalInterceptor">
+		<!-- 统计数据的导出，根据关键字下载相对应的.xls -->
+		<action name="commonExport" class="com.lanyuan.actionapi.commonexport.ICommonExportAction" method="commonExport">
+   		<result name="success" type="stream">
+				<!-- 指定下载文件的类型 -->
+				<param name="contentType">application/vnd.ms-excel,charset=utf-8</param>
+				<!-- 返回流 excelStream为action中的流变量名称 -->
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">attachment;filename=${excelFileName}</param>
+				<!-- 指定下载文件的缓冲大小 -->
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+		<action name="exportDownload" class="com.lanyuan.actionapi.commonexport.IExportDownLoadAction" method="exportDownload">
+		</action>
+	</package>
+</struts>

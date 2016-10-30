@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lanyuan.assembly.netdisk.DaoNetdisk">
+  <resultMap id="BaseResultMap" type="com.lanyuan.assembly.netdisk.EntityNetdisk" >
+    <id column="objectNo" jdbcType="VARCHAR" property="objectNo" />
+    <result column="parentobjectNo" jdbcType="VARCHAR" property="parentobjectNo" />
+    <result column="chirldItemCount" jdbcType="INTEGER" property="chirldItemCount" />
+    <result column="objectName" jdbcType="VARCHAR" property="objectName" />
+    <result column="objectType" jdbcType="INTEGER" property="objectType" />
+    <result column="objectSuffix" jdbcType="VARCHAR" property="objectSuffix" />
+    <result column="objectSavePath" jdbcType="VARCHAR" property="objectSavePath" />
+    <result column="keyWords" jdbcType="VARCHAR" property="keyWords" />
+    <result column="explains" jdbcType="VARCHAR" property="explains" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="modifyer" jdbcType="VARCHAR" property="modifyer" />
+    <result column="modifyerName" jdbcType="VARCHAR" property="modifyerName" />
+    <result column="modifyTime" jdbcType="VARCHAR" property="modifyTime" />
+    <result column="modifyIP" jdbcType="VARCHAR" property="modifyIP" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    objectNo, parentobjectNo, chirldItemCount, objectName, objectType, objectSuffix, 
+    objectSavePath, keyWords, explains, remark, modifyer, modifyerName, modifyTime, modifyIP
+  </sql>
+  <!-- 根据父级编号查找父级的父级编号及名称-->
+  <select id="searchParentNo" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from lysoft_netdisk
+    where objectNo = #{parentobjectNo,jdbcType=VARCHAR}
+  </select>
+  <!-- 通过文件编号查询文件 -->
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from lysoft_netdisk
+    where objectNo = #{objectNo,jdbcType=VARCHAR}
+  </select>
+  <!-- 通过文件编号删除文件 -->
+  <delete id="deleteById" parameterType="java.lang.String" >
+    delete from lysoft_netdisk
+    where objectNo = #{objectNo,jdbcType=VARCHAR}
+  </delete>
+  <!-- 批量删除方法 -->
+  <delete id="batchDelectObjects" parameterType="java.util.List">  
+    delete from lysoft_netdisk
+	where objectNo in 
+    <foreach collection="list" item="item" index="index"  
+        open="(" separator="," close=")">  
+        #{item.objectNo}
+    </foreach>  
+  </delete>
+  <!-- 新增文件，文件夹 -->
+  <insert id="insert" parameterType="com.lanyuan.assembly.netdisk.EntityNetdisk" >
+    insert into lysoft_netdisk
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="objectNo != null">
+        objectNo,
+      </if>
+      <if test="parentobjectNo != null">
+        parentobjectNo,
+      </if>
+      <if test="chirldItemCount != null">
+        chirldItemCount,
+      </if>
+      <if test="objectName != null">
+        objectName,
+      </if>
+      <if test="objectType != null">
+        objectType,
+      </if>
+      <if test="objectSuffix != null">
+        objectSuffix,
+      </if>
+      <if test="objectSavePath != null">
+        objectSavePath,
+      </if>
+      <if test="keyWords != null">
+        keyWords,
+      </if>
+      <if test="explains != null">
+        explains,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="modifyer != null">
+        modifyer,
+      </if>
+      <if test="modifyerName != null">
+        modifyerName,
+      </if>
+      <if test="modifyTime != null">
+        modifyTime,
+      </if>
+      <if test="modifyIP != null">
+        modifyIP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="objectNo != null">
+        #{objectNo,jdbcType=VARCHAR},
+      </if>
+      <if test="parentobjectNo != null">
+        #{parentobjectNo,jdbcType=VARCHAR},
+      </if>
+      <if test="chirldItemCount != null">
+        #{chirldItemCount,jdbcType=INTEGER},
+      </if>
+      <if test="objectName != null">
+        #{objectName,jdbcType=VARCHAR},
+      </if>
+      <if test="objectType != null">
+        #{objectType,jdbcType=INTEGER},
+      </if>
+      <if test="objectSuffix != null">
+        #{objectSuffix,jdbcType=VARCHAR},
+      </if>
+      <if test="objectSavePath != null">
+        #{objectSavePath,jdbcType=VARCHAR},
+      </if>
+      <if test="keyWords != null">
+        #{keyWords,jdbcType=VARCHAR},
+      </if>
+      <if test="explains != null">
+        #{explains,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyer != null">
+        #{modifyer,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyerName != null">
+        #{modifyerName,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyIP != null">
+        #{modifyIP,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <!-- 修改文件，文件夹名称 -->
+  <update id="update" parameterType="com.lanyuan.assembly.netdisk.EntityNetdisk">
+    update lysoft_netdisk
+    <set>
+      <if test="parentobjectNo != null">
+        parentobjectNo = #{parentobjectNo,jdbcType=VARCHAR},
+      </if>
+      <if test="chirldItemCount != null">
+        chirldItemCount = #{chirldItemCount,jdbcType=INTEGER},
+      </if>
+      <if test="objectName != null">
+        objectName = #{objectName,jdbcType=VARCHAR},
+      </if>
+      <if test="objectType != null">
+        objectType = #{objectType,jdbcType=INTEGER},
+      </if>
+      <if test="objectSuffix != null">
+        objectSuffix = #{objectSuffix,jdbcType=VARCHAR},
+      </if>
+      <if test="objectSavePath != null">
+        objectSavePath = #{objectSavePath,jdbcType=VARCHAR},
+      </if>
+      <if test="keyWords != null">
+        keyWords = #{keyWords,jdbcType=VARCHAR},
+      </if>
+      <if test="explains != null">
+        explains = #{explains,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyer != null">
+        modifyer = #{modifyer,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyerName != null">
+        modifyerName = #{modifyerName,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null">
+        modifyTime = #{modifyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyIP != null">
+        modifyIP = #{modifyIP,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where objectNo = #{objectNo,jdbcType=VARCHAR}
+  </update>
+  
+  <!--ConditionGroup查询所有，不分页  -->
+  <select id="selectList" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select 
+			<include refid="Base_Column_List" /> 
+		from lysoft_netdisk 
+		${sql}
+	</select>
+	<!-- 查询总数 -->
+	<select id="getTotalCount" parameterType="java.lang.String"
+		resultType="int">
+		SELECT count(*) from lysoft_netdisk
+		${sql}
+	</select>
+	<!-- ConditionGroup分页查询 -->
+	<select id="selectPageList" parameterType="com.lanyuan.assembly.common.Page"
+		resultMap="BaseResultMap">
+		select 
+			<include refid="Base_Column_List" /> 
+		from lysoft_netdisk 
+		${sql}
+	</select>
+</mapper>

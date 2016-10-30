@@ -1,0 +1,74 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 意见建议 -->
+	<package name="answer" namespace="/answer" extends="GlobalInterceptor">
+	
+		<!-- 跳转列表页面-->
+		<action name="skipToAnswer" class="com.lanyuan.actionapi.answer.ISkipForAnswer" >
+			<result name="success">/answer/answerList.jsp</result>
+		</action>
+		<!-- 跳转添加页面-->
+		<!-- <action name="skipToAdd" class="com.lanyuan.actionapi.answer.ISkipForAnswer" method="add">
+			<result name="success">/answer/answerAddForFront.jsp</result>
+		</action> -->
+		<!-- 跳转回复页面-->
+		<action name="skipToReply" class="com.lanyuan.actionapi.answer.ISkipForAnswer" method="update">
+			<result name="success">/answer/answerReply.jsp</result>
+		</action>
+		<!-- 跳转详情页面-->
+		<action name="skipToDetail" class="com.lanyuan.actionapi.answer.ISkipForAnswer" method="detail">
+			<result name="success">/answer/answerDetail.jsp</result>
+		</action>
+		
+		<!-- 添加意见建议-->
+		<action name="addAnswer" class="com.lanyuan.actionapi.answer.IAdd" method="addAnswer">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- 添加分享标准-->
+		<action name="addCriteria" class="com.lanyuan.actionapi.answer.IAdd" method="addCriteria">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- 添加我要标准-->
+		<action name="addAskForCriteria" class="com.lanyuan.actionapi.answer.IAdd" method="addAskForCriteria">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- 回复 -->
+		<action name="receive" class="com.lanyuan.actionapi.answer.IUpdate" >
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- 删除 -->
+		<action name="deleteAnswer" class="com.lanyuan.actionapi.answer.IDelete" >
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- ID查询 -->
+		<action name="searchAnswerById" class="com.lanyuan.actionapi.answer.ISearchById" method="search" >
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- condition查询 -->
+		<action name="searchAnswerByCondition" class="com.lanyuan.actionapi.answer.ISearchByCondition"  method="search">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- condition分页查询 -->
+		<action name="searchAnswerByConditionAndPage" class="com.lanyuan.actionapi.answer.ISearchByConditionAndPage"  method="search">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+	
+	
+	</package>
+</struts>

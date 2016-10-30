@@ -1,0 +1,57 @@
+[
+{
+  "name":"技术标准体系表",
+  "style":[
+  {
+      "level":"1",
+      "width":"120",
+      "height":"42",
+      "subTypeWidth":"120",
+      "textDirection":"横向"
+  }
+  ]
+},{
+  "name":"管理标准体系表",
+  "style":[
+  {
+      "level":"1",
+      "width":"120",
+      "height":"42",
+      "subTypeWidth":"120",
+      "textDirection":"横向"
+  },
+  {
+      "level":"2",
+      "width":"60",
+      "height":"140",
+      "subTypeWidth":"120",
+      "textDirection":"竖向"
+  }
+  ]
+},{
+  "name":"工作标准体系表",
+  "style":[
+  {
+      "level":"1",
+      "width":"60",
+      "height":"42",
+      "subTypeWidth":"240",
+      "textDirection":"横向"
+  },
+  {
+      "level":"2",
+      "width":"60",
+      "height":"42",
+      "subTypeWidth":"240",
+      "textDirection":"横向"
+  },
+  {
+      "level":"3",
+      "width":"60",
+      "height":"140",
+      "subTypeWidth":"240",
+      "textDirection":"横向"
+  }
+  ]
+}
+]

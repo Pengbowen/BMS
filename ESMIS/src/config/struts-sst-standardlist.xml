@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 体系表层项目 -->
+	<package name="standard" namespace="/sst" extends="GlobalInterceptor">
+	<!-- 进入体系表总框图 -->
+		<action name="toSSTHome" class="com.lanyuan.actionapi.sst.standardlist.ISearchStandardAction">
+		<result name="success">/sst_home.jsp</result>
+		</action>
+		<!-- 跳转到子分类页面-->
+		<action name="toStandardList" class="com.lanyuan.actionapi.sst.standardlist.ISearchStandardAction" >
+			<result name="success">/SST/standard/standardList.jsp</result>
+			</action>
+		<!-- 加载标准数据 -->
+		<action name ="loadStandardList" class="com.lanyuan.actionapi.sst.standardlist.ISearchStandardAction" method="loadData" >
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 上下移动 -->
+		<action name ="move" class="com.lanyuan.actionapi.sst.standardlist.IMoveStandardAction" method="move" >
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 批量调整顺序 -->
+		<action name="setPosition" class="com.lanyuan.actionapi.sst.standardlist.ISearchStandardAction" >
+			<result name="success">/SST/standard/positionSet.jsp</result>
+		</action>
+		<!-- 跳转到添加页面 -->
+		<action name="toAddStandard" class="com.lanyuan.actionapi.sst.standardlist.IAddStandardAction">
+		<result name="success">/SST/standard/addStandard.jsp</result>
+		</action>
+		<!-- 下载批量添加标准模板 -->
+		<action name="downloadStandard" class="com.lanyuan.actionapi.sst.standardlist.IDownloadAction">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 跳转到上传页面 -->
+		<action name="toUploadStandard" class="com.lanyuan.actionapi.sst.standardlist.IBatchAddStandardAction">
+		<result name="success">/SST/standard/upload.jsp</result>
+		</action>
+		<!-- 上传 -->
+		<action name="uploadStandard" class="com.lanyuan.actionapi.sst.standardlist.ISetPositionAction" method="setDisplayOrder">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 显示数据-->
+		<action name="showTotaldate" class="com.lanyuan.actionapi.sst.standardlist.IShowListDateAction" method="showTotalCount" >
+		  <result name="success" type="json"></result>
+		</action>
+	    <!--显示表头数据-->
+		<action name="showTitle" class="com.lanyuan.actionapi.sst.standardlist.ISystemTableStatistics" method="showTotalCount">
+		   <result name="success" >/statistics/SSTCount.jsp</result>
+		</action>
+		 <!--查找表头数据-->
+		<action name="searchTitleId" class="com.lanyuan.actionapi.sst.standardlist.ISearchAllIdAction" method="showTotalCount">
+		   <result name="success" type="json"></result>
+		</action>
+		<!-- 新增标准 -->
+	<!-- 	<action name="insertStandard" class="com.lanyuan.actionapi.sst.standardlist.IAddStandardAction" method="saveStandard">
+		<result name="success" type="json"></result> -->
+		<!-- 导入标准 -->
+		<action name="importStandard" class="com.lanyuan.actionapi.sst.standardlist.IImportStandardAction">
+		<result name="success" type="json"></result>
+		</action>
+			<!-- 删除标准 -->
+		<action name="deleteStandard" class="com.lanyuan.actionapi.sst.standardlist.IDeleteStandardAction">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 加载标准总库数据 -->
+		<action name="loadStandardData" class="com.lanyuan.actionapi.sst.standardlist.ISearchStandardDataAction">
+		<result name="success" type="json"></result>
+		</action>
+		
+		</package>
+</struts>

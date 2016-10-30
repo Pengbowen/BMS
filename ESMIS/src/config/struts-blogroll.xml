@@ -1,0 +1,57 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 友情链接 -->
+	<package name="blogroll" namespace="/blogroll" extends="GlobalInterceptor">
+		
+		<!-- 跳转列表页面-->
+		<action name="skipToBlogroll" class="com.lanyuan.actionapi.blogroll.ISkipForBlogroll" >
+			<result name="success">/blogroll/blogrollList.jsp</result>
+		</action>
+		<!-- 跳转添加页面-->
+		<action name="skipToAdd" class="com.lanyuan.actionapi.blogroll.ISkipForBlogroll" method="add">
+			<result name="success">/blogroll/blogrollAdd.jsp</result>
+		</action>
+		<!-- 跳转修改页面-->
+		<action name="skipToUpdate" class="com.lanyuan.actionapi.blogroll.ISkipForBlogroll" method="update">
+			<result name="success">/blogroll/blogrollAdd.jsp</result>
+		</action>
+		
+		<!-- 添加-->
+		<action name="addBlogroll" class="com.lanyuan.actionapi.blogroll.IAdd" >
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- 删除 -->
+		<action name="deleteBlogroll" class="com.lanyuan.actionapi.blogroll.IDelete" >
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- 修改 -->
+		<action name="updateBlogroll" class="com.lanyuan.actionapi.blogroll.IUpdate" >
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- ID查询 -->
+		<action name="searchBlogrollById" class="com.lanyuan.actionapi.blogroll.ISearchById" method="search" >
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- condition查询 -->
+		<action name="searchBlogrollByCondition" class="com.lanyuan.actionapi.blogroll.ISearchByCondition"  method="search">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- condition分页查询 -->
+		<action name="searchBlogrollByConditionAndPage" class="com.lanyuan.actionapi.blogroll.ISearchByConditionAndPage"  method="search">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		
+	</package>
+</struts>

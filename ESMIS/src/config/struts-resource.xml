@@ -1,0 +1,10 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="resource" namespace="/resource" extends="GlobalInterceptor">
+		 <action name="showResourceList" class="com.lanyuan.actionapi.resource.ISkipToResource" method="resourceList">
+           <result name="success">/resource/resourceList.jsp</result>
+      	 </action> 
+
+
+	</package>
+</struts>

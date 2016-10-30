@@ -1,0 +1,42 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+		<!-- 前台法律法规查询 -->
+	<package name="laws" namespace="/lawslibrary" extends="GlobalInterceptor">
+		<!-- 法律法规查询-->
+		<action name="searchLawsLibrary" class="com.lanyuan.actionapi.sst.ISearchLawsAction" >
+			<result name="success">/SST/face/laws.jsp</result>
+		</action>	
+		<!-- 进入企业贯彻执行法律法规 -->
+		<action name="toLaws_fit" class="com.lanyuan.actionapi.sst.face.ISearchLawsAction" >
+			<result name="success">/SST/face/laws.jsp</result>
+		</action>
+		<!-- 进入企业适用法律法规 -->
+		<action name="toLaws_carry" class="com.lanyuan.actionapi.sst.face.ISearchLawsAction" >
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 查询企业适用法律法规-->
+		<action name="searchLaws_fit" class="com.lanyuan.actionapi.sst.face.ISearchLawsAction" method="laws_fit" >
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 查询企业贯彻执行法律法规-->
+		<action name="searchLaws_carry" class="com.lanyuan.actionapi.lawslibrary.ISearchLawsAction" method="searchLaws">
+			<result name="success" type="json">/SST/face/laws.jsp</result>
+		</action>
+		<!-- 进入法律法规详情页面 -->
+		<action name="lawsDetail" class="com.lanyuan.actionapi.lawslibrary.ICheckLawsDetailAction">
+		<result name="success">/SST/face/laws_Detail.jsp</result>
+		<result name="error">/lawslibrary/error.jsp</result>
+		</action>
+	</package>
+	<!-- 标准详情 -->
+	<package name="standardDetail" namespace="/standardDetail" extends="GlobalInterceptor">
+		<!-- 进入标准列表 -->
+		<action name="toStandardList" class="com.lanyuan.actionapi.sst.face.ISearchStandardListAction" >
+			<result name="success">/SST/face/standardList.jsp</result>
+		</action>
+			<!-- 加载列表 -->
+		<action name="loadStandardList" class="com.lanyuan.actionapi.sst.face.ISearchStandardListAction" method="searchStandardList" >
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

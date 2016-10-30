@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lanyuan.assembly.answer.DaoAnswer">
+	<resultMap id="BaseResultMap" type="com.lanyuan.assembly.answer.EntityAnswer">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="submitType" property="submitType" jdbcType="INTEGER" />
+		<result column="submitTitle" property="submitTitle" jdbcType="VARCHAR" />
+		<result column="submitContent" property="submitContent"
+			jdbcType="LONGVARCHAR" />
+		<result column="filePath" property="filePath" jdbcType="VARCHAR" />
+		<result column="submitID" property="submitID" jdbcType="VARCHAR" />
+		<result column="submitName" property="submitName" jdbcType="VARCHAR" />
+		<result column="submitTime" property="submitTime" jdbcType="VARCHAR" />
+		<result column="submitIP" property="submitIP" jdbcType="VARCHAR" />
+		<result column="submitorMobile" property="submitorMobile"
+			jdbcType="VARCHAR" />
+		<result column="submitorEmail" property="submitorEmail"
+			jdbcType="VARCHAR" />
+		<result column="isreceive" property="isreceive" jdbcType="INTEGER" />
+		<result column="receiveName" property="receiveName" jdbcType="VARCHAR" />
+		<result column="receiveTime" property="receiveTime" jdbcType="VARCHAR" />
+		<result column="receiveIP" property="receiveIP" jdbcType="VARCHAR" />
+		<result column="receiveContent" property="receiveContent"
+			jdbcType="LONGVARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id,submitType,submitTitle,submitContent,filePath,submitID,submitName,submitTime,submitIP,
+		submitorMobile,submitorEmail,isreceive,receiveName,receiveTime,receiveIP,receiveContent
+	</sql>
+
+	<insert id="insert" parameterType="com.lanyuan.assembly.answer.EntityAnswer">
+		insert into lysoft_answer
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="submitType != null">
+				submitType,
+			</if>
+			<if test="submitTitle != null">
+				submitTitle,
+			</if>
+			<if test="submitContent != null">
+				submitContent,
+			</if>
+			<if test="filePath != null">
+				filePath,
+			</if>
+			<if test="submitID != null">
+				submitID,
+			</if>
+			<if test="submitName != null">
+				submitName,
+			</if>
+			<if test="submitTime != null">
+				submitTime,
+			</if>
+			<if test="submitIP != null">
+				submitIP,
+			</if>
+			<if test="submitorMobile != null">
+				submitorMobile,
+			</if>
+			<if test="submitorEmail != null">
+				submitorEmail,
+			</if>
+			<if test="isreceive != null">
+				isreceive,
+			</if>
+			<if test="receiveName != null">
+				receiveName,
+			</if>
+			<if test="receiveTime != null">
+				receiveTime,
+			</if>
+			<if test="receiveIP != null">
+				receiveIP,
+			</if>
+			<if test="receiveContent != null">
+				receiveContent
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="submitType != null">
+				#{submitType,jdbcType=INTEGER},
+			</if>
+			<if test="submitTitle != null">
+				#{submitTitle,jdbcType=VARCHAR},
+			</if>
+			<if test="submitContent != null">
+				#{submitContent,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="filePath != null">
+				#{filePath,jdbcType=VARCHAR},
+			</if>
+			<if test="submitID != null">
+				#{submitID,jdbcType=VARCHAR},
+			</if>
+			<if test="submitName != null">
+				#{submitName,jdbcType=VARCHAR},
+			</if>
+			<if test="submitTime != null">
+				#{submitTime,jdbcType=VARCHAR},
+			</if>
+			<if test="submitIP != null">
+				#{submitIP,jdbcType=VARCHAR},
+			</if>
+			<if test="submitorMobile != null">
+				#{submitorMobile,jdbcType=VARCHAR},
+			</if>
+			<if test="submitorEmail != null">
+				#{submitorEmail,jdbcType=VARCHAR},
+			</if>
+			<if test="isreceive != null">
+				#{isreceive,jdbcType=INTEGER},
+			</if>
+			<if test="receiveName != null">
+				#{receiveName,jdbcType=VARCHAR},
+			</if>
+			<if test="receiveTime != null">
+				#{receiveTime,jdbcType=VARCHAR},
+			</if>
+			<if test="receiveIP != null">
+				#{receiveIP,jdbcType=VARCHAR},
+			</if>
+			<if test="receiveContent != null">
+				#{receiveContent,jdbcType=LONGVARCHAR}
+			</if>
+		</trim>
+	</insert>
+
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		delete from lysoft_answer
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+
+	<update id="update" parameterType="com.lanyuan.assembly.answer.EntityAnswer">
+		update lysoft_answer
+		<set>
+			<if test="submitType != null">
+				submitType = #{submitType,jdbcType=INTEGER},
+			</if>
+			<if test="submitTitle != null">
+				submitTitle = #{submitTitle,jdbcType=VARCHAR},
+			</if>
+			<if test="submitContent != null">
+				submitContent = #{submitContent,jdbcType=LONGVARCHAR},
+			</if>
+			<if test="filePath != null">
+				filePath = #{filePath,jdbcType=VARCHAR},
+			</if>
+			<if test="submitID != null">
+				submitID = #{submitID,jdbcType=VARCHAR},
+			</if>
+			<if test="submitName != null">
+				submitName = #{submitName,jdbcType=VARCHAR},
+			</if>
+			<if test="submitTime != null">
+				submitTime = #{submitTime,jdbcType=VARCHAR},
+			</if>
+			<if test="submitIP != null">
+				submitIP = #{submitIP,jdbcType=VARCHAR},
+			</if>
+			<if test="submitorMobile != null">
+				submitorMobile = #{submitorMobile,jdbcType=VARCHAR},
+			</if>
+			<if test="submitorEmail != null">
+				submitorEmail = #{submitorEmail,jdbcType=VARCHAR},
+			</if>
+			<if test="isreceive != null">
+				isreceive = #{isreceive,jdbcType=INTEGER},
+			</if>
+			<if test="receiveName != null">
+				receiveName = #{receiveName,jdbcType=VARCHAR},
+			</if>
+			<if test="receiveTime != null">
+				receiveTime = #{receiveTime,jdbcType=VARCHAR},
+			</if>
+			<if test="receiveIP != null">
+				receiveIP = #{receiveIP,jdbcType=VARCHAR},
+			</if>
+			<if test="receiveContent != null">
+				receiveContent = #{receiveContent,jdbcType=LONGVARCHAR}
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+
+	<select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from lysoft_answer
+		where id = #{id,jdbcType=INTEGER};
+	</select>
+
+
+	<select id="getTotalCount" parameterType="java.lang.String"
+		resultType="java.lang.Integer">
+		SELECT count(*) from lysoft_answer
+		${sql}
+	</select>
+
+
+	<select id="selectList" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from lysoft_answer
+
+		${sql}
+	</select>
+
+	<select id="selectPageList" resultType="com.lanyuan.assembly.answer.EntityAnswer"
+		parameterType="com.lanyuan.assembly.common.Page">
+		select
+		<include refid="Base_Column_List" />
+		from
+		lysoft_answer
+		${sql}
+	</select>
+
+</mapper>

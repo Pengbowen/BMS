@@ -1,0 +1,155 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0px;
+	padding:0px;
+	color:#333;
+	background:#0569BF;
+	font:12px/1.62 Arial, Helvetica, sans-serif;
+}
+table,h2,p{
+	margin:0px;
+	padding:0px;
+}
+em,i,u{
+	font-style:normal;
+}
+a{
+	color:#333;
+	cursor:pointer;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:none;
+}
+a img{
+	border:none;
+}
+ul{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+.clearfix:after{
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+
+#login{
+	width:100%;
+	margin:0px auto;
+	position:relative;
+	z-index:10;
+}
+.login{
+	position:relative;
+	width:520px;
+	height:320px;
+	margin:210px auto 0px;
+	border-radius:3px;
+	/* background:url(../images/main.png) no-repeat center center #ffffff; */
+	/*更改登录图片*/
+	background:no-repeat center center #ffffff;
+}
+.login01{
+	position:relative;
+	width:838px;
+	height:490px;
+	margin:210px auto 0px;
+	background:url(../images/main01.png) no-repeat center center;
+}
+.loginLogo{
+	position:absolute;
+	top:-100px;
+	left:120px;
+	width:364px;
+	height:105px;
+	background:url(../images/logo.png) no-repeat;
+}
+.loginBox{
+	position:absolute;
+	top:40px;
+	left:93px;	
+}
+.loginName{
+	color:#e35719;
+	font-size:24px;
+	font-family:"微软雅黑";
+	height:30px;
+	line-height:30px;
+	width:280px;
+}
+.loginTxt{
+	margin-top:30px;
+	width:180px;
+}
+.loginTxt li{
+	margin-bottom:20px;
+	position:relative;
+}
+.loginTxt li span{
+	position:absolute;
+	left:0;
+	top:0;
+	display:inline-block;
+	float:left;
+	width:40px;
+	font-size:14px;
+	height:40px;
+	line-height:40px;
+	color:#ffffff;
+	border-radius: 3px;
+	border-top-right-radius:0;
+	border-bottom-right-radius:0;
+	text-align:center;
+	background:#0569BF;
+}
+.loginIco01,.loginIco02{
+	height:36px;
+	line-height:36px;
+	border-radius:3px;
+}
+.loginText{
+    float: left;
+    width: 300px;
+    height: 36px;
+    line-height: 30px;
+    margin-left: 30px;
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    text-indent:2em;
+}
+.loginBtn{
+	cursor: pointer;
+	color:#ffffff;
+	width:334px;
+	height:40px;
+	line-height:40px;
+	letter-spacing:2px;
+	padding-left:25px;
+	border:none;
+	border-radius: 3px;
+	background:#0569BF;
+}
+.login-bottom{
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:276px;
+	z-index:9;
+	background:url(../images/bg.png) no-repeat left bottom;
+}
+
+/*增加未输入密码的显示功能*/
+.loginTxt li label {
+	position: absolute;
+	left: 0px;
+	top: -22px;
+	font-size: 12px;
+	line-height: 24px;
+}

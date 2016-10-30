@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 体系表层项目 -->
+	<package name="layerItems" namespace="/sst" extends="GlobalInterceptor">
+		<!-- 跳转层项目编辑页面-->
+		<action name="toLayerItems" class="com.lanyuan.actionapi.sst.layeritems.ISearchLayerItemsAction" >
+			<result name="success">/SST/layeritems/layerItemManage.jsp</result>
+		</action>
+		<!-- 查询 -->
+		<action name="loadLayerItems" class="com.lanyuan.actionapi.sst.layeritems.ISearchLayerItemsAction"  method="loadData">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 编辑项目 -->	
+		<action name="modifyItem" class="com.lanyuan.actionapi.sst.layeritems.IModifyLayerItemAction" >
+			<result name="success">/SST/layeritems/modifyLayerItem.jsp</result>
+		</action>	
+		<!-- 加载所属父级下拉选 -->	
+		<action name="loadParentLayerItems" class="com.lanyuan.actionapi.sst.layeritems.ISearchParentAction">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 跳转到添加项目 -->	
+		<action name="addLayerItem" class="com.lanyuan.actionapi.sst.layeritems.IAddLayerItemAction">
+		<result name="success">/SST/layeritems/modifyLayerItem.jsp</result>
+		</action>
+		<!-- 添加项目 -->	
+		<action name="insertLayerItem" class="com.lanyuan.actionapi.sst.layeritems.IAddLayerItemAction" method="saveLayerItem">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 跳转到添加子项目 -->	
+		<action name="addSubLayerItem" class="com.lanyuan.actionapi.sst.layeritems.IAddSubItemAction">
+		<result name="success">/SST/layeritems/modifyLayerItem.jsp</result>
+		</action>
+		<!-- 查询下一层级的层级号码和最大显示序号 -->
+		<action name="searchLayerNo" class="com.lanyuan.actionapi.sst.layeritems.ISearchLayerNoAndDisplayOrderAction" >
+		<result name="success" type="json"></result>
+		</action>
+		<action name="serachMacDisplayOrder" class="com.lanyuan.actionapi.sst.layeritems.ISearchLayerNoAndDisplayOrderAction" method="searchDisplayOrder">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 编辑项目 -->
+		<action name="modifyLayerItem" class="com.lanyuan.actionapi.sst.layeritems.IModifyLayerItemAction" method="modifyLayerItem">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 删除项目 -->
+		<action name="deleteLayerItem" class="com.lanyuan.actionapi.sst.layeritems.IDeleteItemAction">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 转向技术标准体系表-->
+		<action name="toTechnicalStandard" class="com.lanyuan.actionapi.sst.ILoadSSTViewAction" method="toTechnicalStandard">
+			<result name="success">/SST/technical-standard.jsp</result>
+		</action>
+		<!-- 技术标准体系表-->
+		<action name="technicalStandard" class="com.lanyuan.actionapi.sst.ILoadSSTViewAction" method="technicalStandard">
+			<result name="success"  type="json"></result>
+		</action>
+		<!-- 转向管理标准体系表-->
+		<action name="toManageStandard" class="com.lanyuan.actionapi.sst.ILoadSSTViewAction" method="toManageStandard">
+			<result name="success">/SST/manage-standard.jsp</result>
+		</action>
+		<!-- 管理标准体系表-->
+		<action name="manageStandard" class="com.lanyuan.actionapi.sst.ILoadSSTViewAction" method="manageStandard">
+			<result name="success"  type="json"></result>
+		</action>
+		<!-- 转向工作标准体系表-->
+		<action name="toWorkStandard" class="com.lanyuan.actionapi.sst.ILoadSSTViewAction" method="toWorkStandard">
+			<result name="success">/SST/work-standard.jsp</result>
+		</action>
+		<!-- 工作标准体系表-->
+		<action name="workStandard" class="com.lanyuan.actionapi.sst.ILoadSSTViewAction" method="workStandard">
+			<result name="success"  type="json"></result>
+		</action>
+		<!-- 转向设置体系样式表-->
+		<action name="toStyleSetting" class="com.lanyuan.actionapi.sst.ISettingStyleAction" method="toStyleSetting">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 跳转到上传页面-->
+		<action name="toUploadItems" class="com.lanyuan.actionapi.sst.IUploadAction" >
+			<result name="success">/SST/layeritems/upload.jsp</result>
+		</action>
+		<!-- 上传数据-->
+		<action name="uploadItems" class="com.lanyuan.actionapi.sst.layeritems.IBatchAddItemAction" method="batchAdd"/>
+		<!-- 保存设置体系样式表-->
+		<action name="saveStyleSetting" class="com.lanyuan.actionapi.sst.ISettingStyleAction" method="saveStyleSetting">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 下载模板 -->
+		<action name="downloadItem" class="com.lanyuan.actionapi.sst.layeritems.IDownloadAction">
+		<result name="success" type="json"></result>
+		</action>
+	</package>
+	<!-- 移动端接口路径 -->
+	<package name="layerItems_mobile" namespace="/sst_mobile" extends="GlobalInterceptor">
+		<!-- 根据体系表id获取此体系表下所有的层项目 -->
+		<action name="getLayerItem" class="com.lanyuan.actionapi.sst.mobile.IGetLayerItemsBySSTId">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 获取标准列表 -->
+		<action name="getStandardDataList" class="com.lanyuan.actionapi.sst.mobile.IGetStandardList">
+		<result name="success" type="json"></result>
+		</action>
+	
+	</package>
+</struts>

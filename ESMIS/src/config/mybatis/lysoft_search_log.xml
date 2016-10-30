@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lanyuan.assembly.query.log.DAOSearchLog">
+	  <resultMap id="BaseResultMap" type="com.lanyuan.assembly.query.log.EntitySearchLog" >
+	    <id column="logid" property="logid" jdbcType="INTEGER" />
+	    <result column="codition" property="codition" jdbcType="VARCHAR" />
+	    <result column="searchTime" property="searchTime" jdbcType="VARCHAR" />
+  	  </resultMap>
+	
+	<insert id="insert" parameterType="com.lanyuan.assembly.query.log.EntitySearchLog" useGeneratedKeys="true" keyProperty="logid">
+		insert into lysoft_search_log
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="logid != null">
+				logid,
+			</if>
+			<if test="codition != null">
+				codition,
+			</if>
+			<if test="searchTime != null">
+				searchTime,
+			</if>
+			<if test="type != null">
+				type
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="logid != null">
+				#{logid,jdbcType=INTEGER},
+			</if>
+			<if test="codition != null">
+				#{codition,jdbcType=VARCHAR},
+			</if>
+			<if test="searchTime != null">
+				#{searchTime,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				#{type,jdbcType=VARCHAR}
+			</if>
+		</trim>
+	</insert>
+
+	<select id="getTotalCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+		SELECT count(*) from lysoft_search_log  ${sql}
+	</select>
+	
+</mapper>

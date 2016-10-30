@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 体系表权限 -->
+	<package name="power" namespace="/sst" extends="GlobalInterceptor">
+		<!-- 进入权限设置页面 -->
+		<action name="powerSet" class="com.lanyuan.actionapi.sst.power.IPowerSetAction">
+		<result name="success">/SST/power/setPower.jsp</result>
+		</action>
+		<!-- 加载所有项目和子分类信息 -->
+		<action name="powerLoadData" class="com.lanyuan.actionapi.sst.power.IPowerSetAction" method="loadData">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 保存权限设置 -->
+		<action name="savePowerSet"  class="com.lanyuan.actionapi.sst.power.ISavePowerAction">
+		<result name="success" type="json"></result>
+		</action>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</package>
+</struts>

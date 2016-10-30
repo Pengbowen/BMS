@@ -1,0 +1,63 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="lawslibrary" namespace="/lawslibrary" extends="GlobalInterceptor">
+		<!-- 手动入库 -->
+		<action name="addLawsByMananl" class="com.lanyuan.actionapi.lawslibrary.IAddLawsByMananlAction" method="addLawsByMananl">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 修改 -->
+		<action name="modifyLaws" class="com.lanyuan.actionapi.lawslibrary.IModifyLawsAction" method="modifyLaws">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 作废 -->
+		<action name="cancellation" class="com.lanyuan.actionapi.lawslibrary.IModifyLawsAction" method="cancellation">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 删除法规（lawsId或lawsNo） -->
+		<action name="deleteLaws" class="com.lanyuan.actionapi.lawslibrary.IDeleteLawsAction" method="deleteLaws">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 查询-->
+		<action name="searchLaws" class="com.lanyuan.actionapi.lawslibrary.ISearchLawsAction" method="searchLaws">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="searchFortLaws" class="com.lanyuan.actionapi.lawslibrary.IFSearchLawsAction" method="searchLaws">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 根据lawsId或lawsNo显示详情-->
+		<action name="showLawsDetail" class="com.lanyuan.actionapi.lawslibrary.IShowLawsDetailAction" method="showLawsDetail">
+			<result name="success">/lawslibrary/lawsShowDetail.jsp</result>
+		</action>
+		<!-- 添加，修改操作接口-->
+		<action name="operatorLaws" class="com.lanyuan.actionapi.lawslibrary.IOperatorLawsAction" method="operatorLaws">
+		    <result name="success">/lawslibrary/lawsAddByMananl.jsp</result>
+		</action>
+		<!-- 显示法律法规主列表 -->
+       <action name="showLawsLibrary" class="com.lanyuan.actionapi.lawslibrary.IShowListAction">
+           <result name="success">/lawslibrary/lawsList.jsp</result>
+       </action> 
+        <!-- 上传数据 -->
+	  <action name="upload" class="com.lanyuan.actionapi.lawslibrary.IUploadDataAction">
+		<result name="success" type="json"></result>
+		<result name="error" type="json"></result>
+	 </action>
+	  <action name="downLoad" class="com.lanyuan.actionapi.lawslibrary.IDownloadLaws" method="downLoad">
+			<result name="success" type="stream">
+        	<!-- 指定下载文件的缓冲大小 -->
+        	<param name="bufferSize">1024</param>
+      </result>
+      </action>
+       <!-- 智能查询  -->
+      <action name="frontLikeSearch" class="com.lanyuan.actionapi.lawslibrary.ILikeSearchLawsAction" method="searchLawslibrary">
+       <result name="success" type="json"></result>
+      </action>
+      <!-- 统计法律法规 -->
+      <action name="showStatementLaws" class="com.lanyuan.actionapi.lawslibrary.INumericalStatementLaws" method="showStatement">
+      <result name="success" type="json"></result>
+      </action>
+      <!-- 显示法律法规统计页面-->
+		<action name="showNumericalStatementLaw" class="com.lanyuan.actionapi.lawslibrary.INumericalStatementLaws" >
+			<result name="success">/statistics/lawsCount.jsp</result>
+		</action>
+	</package>
+</struts>

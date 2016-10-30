@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="zho">
+  <head>
+    <meta content="f8aff2ac-1021-4a2c-8e0b-705702383770" name="dtb:uid"/>
+    <meta content="2" name="dtb:depth"/>
+    <meta content="calibre (2.69.0)" name="dtb:generator"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>DL／T 1404-2015</text>
+  </docTitle>
+  <navMap>
+    <navPoint id="ucDXmC9zPkODfveVF72bPX3" playOrder="1">
+      <navLabel>
+        <text>目  次</text>
+      </navLabel>
+      <content src="DL_T%201404-2015_split_001.htm"/>
+    </navPoint>
+    <navPoint id="u9bPm8nBLEvuOCwGeb2XRQA" playOrder="2">
+      <navLabel>
+        <text>前  言</text>
+      </navLabel>
+      <content src="DL_T%201404-2015_split_002.htm"/>
+    </navPoint>
+    <navPoint id="umoCsWYIydL233hMOLIpv3E" playOrder="3">
+      <navLabel>
+        <text>1　范围</text>
+      </navLabel>
+      <content src="DL_T%201404-2015_split_004.htm"/>
+    </navPoint>
+    <navPoint id="uzt5fcbcAEjB3SQStrzGlm6" playOrder="4">
+      <navLabel>
+        <text>2　规范性引用文件</text>
+      </navLabel>
+      <content src="DL_T%201404-2015_split_005.htm"/>
+    </navPoint>
+    <navPoint id="uSO2nfNauttKdSg5bNMb5eA" playOrder="5">
+      <navLabel>
+        <text>3　术语和定义</text>
+      </navLabel>
+      <content src="DL_T%201404-2015_split_006.htm"/>
+    </navPoint>
+    <navPoint id="u7XmOv2nYGtkE3uOyGlPU73" playOrder="6">
+      <navLabel>
+        <text>4　缩略语</text>
+      </navLabel>
+      <content src="DL_T%201404-2015_split_007.htm"/>
+    </navPoint>
+    <navPoint id="uIK4yydtd77FWXFRjNsJUH9" playOrder="7">
+      <navLabel>
+        <text>5　总体要求</text>
+      </navLabel>
+      <content src="DL_T%201404-2015_split_008.htm"/>
+    </navPoint>
+    <navPoint id="uZrqXadNRxalhbuSQT6svlG" playOrder="8">
+      <navLabel>
+        <text>6　功能要求</text>
+      </navLabel>
+      <content src="DL_T%201404-2015_split_009.htm"/>
+    </navPoint>
+    <navPoint id="uQXKHpJ8fqtuXjGbX9GrcF2" playOrder="9">
+      <navLabel>
+        <text>7　防误规则文件</text>
+      </navLabel>
+      <content src="DL_T%201404-2015_split_010.htm"/>
+    </navPoint>
+    <navPoint id="uvwFFHxqbjqPplv4ZJIaEV2" playOrder="10">
+      <navLabel>
+        <text>8　DL/T 860信息接口</text>
+      </navLabel>
+      <content src="DL_T%201404-2015_split_011.htm"/>
+    </navPoint>
+    <navPoint id="uUeJmCCbjcqQLUAKvflIdu8" playOrder="11">
+      <navLabel>
+        <text>附  录  A （资料性附录） 防误闭锁接点的作用</text>
+      </navLabel>
+      <content src="DL_T%201404-2015_split_012.htm"/>
+    </navPoint>
+  </navMap>
+</ncx>

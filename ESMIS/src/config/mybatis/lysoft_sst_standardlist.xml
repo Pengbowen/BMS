@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lanyuan.assembly.sst.standard.DAOStandard" >
+  <resultMap id="BaseResultMap" type="com.lanyuan.assembly.sst.standard.EntitySSTStandardList" >
+    <id column="standardId" property="standardId" jdbcType="VARCHAR" />
+    <result column="SSTId" property="SSTId" jdbcType="INTEGER" />
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="layerNo" property="layerNo" jdbcType="INTEGER" />
+     <result column="standardNo" property="standardNo" jdbcType="VARCHAR" />
+      <result column="standardCategory" property="standardCategory" jdbcType="VARCHAR" />
+    <result column="layerItemId" property="layerItemId" jdbcType="VARCHAR" />
+    <result column="subClassId" property="subClassId" jdbcType="VARCHAR" />
+    <result column="displayOrder" property="displayOrder" jdbcType="INTEGER" />
+    <result column="modifyer" property="modifyer" jdbcType="VARCHAR" />
+    <result column="modifyerName" property="modifyerName" jdbcType="VARCHAR" />
+    <result column="modifyTime" property="modifyTime" jdbcType="VARCHAR" />
+    <result column="modifyIP" property="modifyIP" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="RelateResultMap" type="com.lanyuan.assembly.sst.standard.EntitySSTStandardList" >
+    <id column="standardId" property="standardId" jdbcType="VARCHAR" />
+    <result column="SSTId" property="SSTId" jdbcType="INTEGER" />
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="layerNo" property="layerNo" jdbcType="INTEGER" />
+    <result column="layerItemId" property="layerItemId" jdbcType="VARCHAR" />
+    <result column="subClassId" property="subClassId" jdbcType="VARCHAR" />
+    <result column="displayOrder" property="displayOrder" jdbcType="INTEGER" />
+    <result column="modifyer" property="modifyer" jdbcType="VARCHAR" />
+    <result column="modifyerName" property="modifyerName" jdbcType="VARCHAR" />
+    <result column="modifyTime" property="modifyTime" jdbcType="VARCHAR" />
+    <result column="modifyIP" property="modifyIP" jdbcType="VARCHAR" />
+    <result column="standardNo" property="standardNo" jdbcType="VARCHAR" />
+    <result column="standardName" property="standardName" jdbcType="VARCHAR" />
+    <result column="standardNameEN" property="standardNameEN" jdbcType="VARCHAR" />
+    <result column="subjectWords" property="subjectWords" jdbcType="VARCHAR" />
+    <result column="SSTLoaction" property="SSTLoaction" jdbcType="VARCHAR" />
+    <result column="adoptIS" property="adoptIS" jdbcType="VARCHAR" />
+    <result column="adoptionDegree" property="adoptionDegree" jdbcType="VARCHAR" />
+    <result column="standardCategory" property="standardCategory" jdbcType="VARCHAR" />
+    <result column="standardCategoryName" property="standardCategoryName" jdbcType="VARCHAR" />
+    <result column="approvedUnit" property="approvedUnit" jdbcType="VARCHAR" />
+    <result column="approvedDate" property="approvedDate" jdbcType="VARCHAR" />
+    <result column="effectiveDate" property="effectiveDate" jdbcType="VARCHAR" />
+    <result column="proposedUnit" property="proposedUnit" jdbcType="VARCHAR" />
+    <result column="draftedUnit" property="draftedUnit" jdbcType="VARCHAR" />
+    <result column="majorDrafters" property="majorDrafters" jdbcType="VARCHAR" />
+    <result column="standardClassNo" property="standardClassNo" jdbcType="VARCHAR" />
+    <result column="standardKindNo" property="standardKindNo" jdbcType="VARCHAR" />
+    <result column="applicableMajor" property="applicableMajor" jdbcType="VARCHAR" />
+    <result column="newStandardId" property="newStandardId" jdbcType="VARCHAR" />
+    <result column="newStandardNo" property="newStandardNo" jdbcType="VARCHAR" />
+    <result column="oldStandardId" property="oldStandardId" jdbcType="VARCHAR" />
+    <result column="oldStandardNo" property="oldStandardNo" jdbcType="VARCHAR" />
+    <result column="explaintd" property="explaintd" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="effectiveState" property="effectiveState" jdbcType="INTEGER" />
+    <result column="upgradeVersion" property="upgradeVersion" jdbcType="VARCHAR" />
+    <result column="upgradeUser" property="upgradeUser" jdbcType="VARCHAR" />
+    <result column="upgradeDate" property="upgradeDate" jdbcType="VARCHAR" />
+    <result column="dataSource" property="dataSource" jdbcType="INTEGER" />
+    <result column="filePath" property="filePath" jdbcType="VARCHAR" />
+    <result column="sharePeople" property="sharePeople" jdbcType="VARCHAR" />
+    <result column="browseVolume" property="browseVolume" jdbcType="INTEGER" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="creatorName" property="creatorName" jdbcType="VARCHAR" />
+    <result column="createTime" property="createTime" jdbcType="VARCHAR" />
+    <result column="createIP" property="createIP" jdbcType="VARCHAR" />
+    <result column="documentType" property="documentType" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="census_map" type="com.lanyuan.assembly.sst.SingleStandardCensus">
+  <result column="standardCategory" property="standardCategory" jdbcType="VARCHAR" />
+    <result column="layerItemId" property="layerItemId" jdbcType="VARCHAR" />
+    <result column="subClassId" property="subClassId" jdbcType="VARCHAR" />
+      <result column="count" property="count" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    standardId, SSTId, layerNo, layerItemId, subClassId, displayOrder, modifyer, modifyerName, 
+    modifyTime, modifyIP
+  </sql>
+  <sql id="Relate_Column_list">
+  	
+  	lysoft_standardLibrary.standardName AS standardName, 
+  	lysoft_standardLibrary.standardNameEN AS standardNameEN, 
+  	lysoft_standardLibrary.subjectWords AS subjectWords, 
+  	lysoft_standardLibrary.SSTLoaction AS SSTLoaction, 
+    lysoft_standardLibrary.adoptIS AS adoptIS, 
+    lysoft_standardLibrary.adoptionDegree AS adoptionDegree, 
+   
+    lysoft_standardLibrary.standardCategoryName AS standardCategoryName, 
+    lysoft_standardLibrary.approvedUnit AS approvedUnit, 
+    lysoft_standardLibrary.approvedDate AS approvedDate, 
+    lysoft_standardLibrary.effectiveDate AS effectiveDate, 
+    lysoft_standardLibrary.proposedUnit AS proposedUnit, 
+    lysoft_standardLibrary.draftedUnit AS draftedUnit, 
+    lysoft_standardLibrary.majorDrafters AS majorDrafters, 
+    lysoft_standardLibrary.standardClassNo AS standardClassNo, 
+    lysoft_standardLibrary.standardKindNo AS standardKindNo, 
+    lysoft_standardLibrary.applicableMajor AS applicableMajor, 
+    lysoft_standardLibrary.newStandardId AS newStandardId, 
+    lysoft_standardLibrary.newStandardNo AS newStandardNo, 
+    lysoft_standardLibrary.oldStandardId AS oldStandardId, 
+    lysoft_standardLibrary.oldStandardNo AS oldStandardNo, 
+    lysoft_standardLibrary.explaintd AS explaintd, 
+    lysoft_standardLibrary.remark AS remark, 
+    lysoft_standardLibrary.effectiveState AS effectiveState, 
+    lysoft_standardLibrary.upgradeVersion AS upgradeVersion, 
+    lysoft_standardLibrary.upgradeUser AS upgradeUser, 
+    lysoft_standardLibrary.upgradeDate AS upgradeDate, 
+    lysoft_standardLibrary.dataSource AS dataSource, 
+    lysoft_standardLibrary.filePath AS filePath, 
+    lysoft_standardLibrary.sharePeople AS sharePeople, 
+    lysoft_standardLibrary.browseVolume AS browseVolume, 
+    lysoft_standardLibrary.creator AS creator, 
+    lysoft_standardLibrary.creatorName AS creatorName, 
+    lysoft_standardLibrary.createTime AS createTime, 
+    lysoft_standardLibrary.createIP AS createIP,
+  	lysoft_standardLibrary.documentType AS documentType,
+  	 
+  	lysoft_sst_standardlist.standardCategory AS standardCategory, 
+  	lysoft_sst_standardlist.standardNo  AS standardNo, 
+  	lysoft_sst_standardlist.standardId AS standardId, 
+  	lysoft_sst_standardlist.SSTId AS SSTId, 
+  	lysoft_sst_standardlist.layerNo AS layerNo, 
+  	lysoft_sst_standardlist.layerItemId AS layerItemId, 
+  	lysoft_sst_standardlist.subClassId AS subClassId, 
+  	lysoft_sst_standardlist.displayOrder AS displayOrder, 
+  	lysoft_sst_standardlist.modifyer AS modifyer, 
+  	lysoft_sst_standardlist.modifyerName AS modifyerName, 
+    lysoft_sst_standardlist.modifyTime AS modifyTime, 
+    lysoft_sst_standardlist.modifyIP AS modifyIP
+   
+  </sql>
+  <!-- 根据标准id查询标准 -->
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from lysoft_sst_standardlist
+    where standardId = #{standardid,jdbcType=VARCHAR}
+  </select>
+  <!-- 根据标准ID删除标准 -->
+  <delete id="deleteById" parameterType="java.lang.String" >
+    delete from lysoft_sst_standardlist
+    where standardId = #{standardid,jdbcType=VARCHAR}
+  </delete>
+ <!-- 插入标准 -->
+  <insert id="insert" parameterType="com.lanyuan.assembly.sst.standard.EntitySSTStandardList" >
+    insert into lysoft_sst_standardlist
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="standardId != null" >
+        standardId,
+      </if>
+      <if test="standardNo != null" >
+        standardNo,
+      </if>
+      <if test="standardCategory != null" >
+        standardCategory,
+      </if>
+      <if test="SSTId != null" >
+        SSTId,
+      </if>
+      <if test="layerNo != null" >
+        layerNo,
+      </if>
+      <if test="layerItemId != null" >
+        layerItemId,
+      </if>
+      <if test="subClassId != null" >
+        subClassId,
+      </if>
+      
+      <if test="displayOrder != null" >
+        displayOrder,
+      </if>
+      <if test="modifyer != null" >
+        modifyer,
+      </if>
+      <if test="modifyerName != null" >
+        modifyerName,
+      </if>
+      <if test="modifyTime != null" >
+        modifyTime,
+      </if>
+      <if test="modifyIP != null" >
+        modifyIP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="standardId != null" >
+        #{standardId,jdbcType=VARCHAR},
+      </if>
+      <if test="standardNo != null" >
+        #{standardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="standardCategory != null" >
+        #{standardCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="SSTId != null" >
+        #{SSTId,jdbcType=INTEGER},
+      </if>
+      <if test="layerNo != null" >
+        #{layerNo,jdbcType=INTEGER},
+      </if>
+      <if test="layerItemId != null" >
+        #{layerItemId,jdbcType=VARCHAR},
+      </if>
+      <if test="subClassId != null" >
+        #{subClassId,jdbcType=VARCHAR},
+      </if>
+      <if test="displayOrder != null" >
+        #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="modifyer != null" >
+        #{modifyer,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyerName != null" >
+        #{modifyerName,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyIP != null" >
+        #{modifyIP,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <!-- 更新标准 -->
+  <update id="update" parameterType="com.lanyuan.assembly.sst.standard.EntitySSTStandardList" >
+    update lysoft_sst_standardlist
+    <set >
+     <if test="standardNo != null" >
+        #{standardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="standardCategory != null" >
+        #{standardCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="SSTId != null" >
+        SSTId = #{SSTId,jdbcType=INTEGER},
+      </if>
+      <if test="layerNo != null" >
+        layerNo = #{layerNo,jdbcType=INTEGER},
+      </if>
+      <if test="layerItemId != null" >
+        layerItemId = #{layerItemId,jdbcType=VARCHAR},
+      </if>
+      <if test="subClassId != null" >
+        subClassId = #{subClassId,jdbcType=VARCHAR},
+      </if>
+      <if test="displayOrder != null" >
+        displayOrder = #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="modifyer != null" >
+        modifyer = #{modifyer,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyerName != null" >
+        modifyerName = #{modifyerName,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modifyTime = #{modifyTime,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyIP != null" >
+        modifyIP = #{modifyIP,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where standardId = #{standardId,jdbcType=VARCHAR}
+  </update>
+  <!-- 根据体系表ID查询标准  -->
+  <select id="findStandardListBySSTId" parameterType="java.lang.String" resultMap="BaseResultMap">
+  select
+	<include refid="Base_Column_List" /> 
+	from lysoft_sst_standardlist 
+	where SSTId =  #{SSTId,jdbcType=VARCHAR}
+  </select>
+  
+   <select id="getTotalCount" parameterType="java.lang.String"
+		resultType="int">
+		SELECT 
+			count(*)
+		FROM  lysoft_sst_standardlist  left join  lysoft_standardLibrary 
+		ON 
+		lysoft_standardLibrary.standardId = lysoft_sst_standardlist.standardId
+		${sql}
+		
+	</select>
+	
+	<select id="selectList" parameterType="java.lang.String" resultMap="RelateResultMap">
+		SELECT 
+			<include refid="Relate_Column_list" /> 
+		FROM  lysoft_sst_standardlist  left join  lysoft_standardLibrary 
+		ON 
+		lysoft_standardLibrary.standardId = lysoft_sst_standardlist.standardId
+		${sql}
+	</select>
+	
+	<select id="selectPageList" parameterType="com.lanyuan.assembly.common.Page"
+		resultMap="RelateResultMap">
+		SELECT 
+			<include refid="Relate_Column_list" /> 
+		FROM  lysoft_sst_standardlist  left join  lysoft_standardLibrary 
+		ON 
+		lysoft_standardLibrary.standardId = lysoft_sst_standardlist.standardId
+		${sql}
+	</select>
+	
+<!-- 根据子分类编号查询标准 -->
+<select id="findStandardBySubClassId" parameterType="java.lang.String" resultMap="BaseResultMap">
+	select
+		<include refid="Base_Column_List" /> 
+	from lysoft_sst_standardlist
+	where subclassid = #{subclassid,jdbcType=VARCHAR}
+	
+</select>
+<!-- 设置标准的显示顺序 -->
+	<!-- <update id="setDisplayOrder"  parameterType="java.lang.Integer">
+	update lysoft_sst_standardlist set displayorder = #{displayOrder,jdbcType=INTEGER} where
+	standardid = #{standardid,jdbcType=VARCHAR}
+	</update> -->
+<!-- 标准的显示顺序下移 -->
+	<!-- <update id="moveDownStandard" parameterType="java.lang.String">
+	update lysoft_sst_standardlist set displayorder = displayorder+1 where
+	standardid = #{standardid,jdbcType=VARCHAR}
+	</update> --> 
+	<!-- 根据层项目编号查询标准 -->
+	<select id="findByLayerItemId" parameterType="java.lang.String" resultMap="BaseResultMap" >
+	select
+		<include refid="Base_Column_List" /> 
+	from lysoft_sst_standardlist
+	where layerItemId = #{layerItemId,jdbcType=VARCHAR}
+	</select>
+	<!-- 根据项目id查找最大的显示顺序 -->
+	<select id="selectMaxDisplayOrderByItemId" parameterType="java.lang.String" resultType="java.lang.Integer">
+	select max(displayOrder) from lysoft_sst_standardlist
+	where layerItemId = #{layerItemId,jdbcType=VARCHAR}
+	</select>
+	
+	<!-- 根据子分类id查找最大的显示顺序 -->
+	<select id="selectMaxDisplayOrderBySubClassId" parameterType="java.lang.String" resultType="java.lang.Integer">
+	select max(displayOrder) from lysoft_sst_standardlist
+	where subClassId = #{subClassId,jdbcType=VARCHAR}
+	</select>
+	<!-- 统计项目标准数量 -->
+	<select id="totalItemStandardCount" parameterType="java.lang.Integer" resultMap="census_map">
+	select lysoft_standardlibrary.standardCategory as standardCategory ,lysoft_standardlibrary.standardCategoryName AS standardCategoryName ,lysoft_sst_standardlist.layerItemId as layerItemId,count(lysoft_standardlibrary.standardId) as count
+	from lysoft_standardlibrary LEFT JOIN lysoft_sst_standardlist on lysoft_standardlibrary.standardId = lysoft_sst_standardlist.standardId
+
+	where lysoft_sst_standardlist.SSTId =  #{SSTId,jdbcType=VARCHAR}
+	group BY
+	lysoft_standardlibrary.standardCategory ,lysoft_sst_standardlist.layerItemId 
+	</select>
+	<!-- 统计子分类标准数量 -->
+	<select id="totalSubClassStandardCount" parameterType="java.lang.Integer" resultMap="census_map">
+	select lysoft_standardlibrary.standardCategory as standardCategory ,lysoft_standardlibrary.standardCategoryName AS standardCategoryName ,lysoft_sst_standardlist.subClassId as subClassId,count(lysoft_standardlibrary.standardId) as count
+	from lysoft_standardlibrary LEFT JOIN lysoft_sst_standardlist on lysoft_standardlibrary.standardId = lysoft_sst_standardlist.standardId
+
+	where lysoft_sst_standardlist.SSTId =  #{SSTId,jdbcType=VARCHAR}
+	group BY
+	lysoft_standardlibrary.standardCategory ,lysoft_sst_standardlist.subClassId
+	</select>	
+	<!-- 获取最大显示顺序 -->
+	<select id="getMaxDisplayOrderByLayerItemId" parameterType="java.lang.String" resultType="java.lang.Integer">
+	select max(displayOrder) from lysoft_sst_standardlist
+	where layerItemId = #{layerItemId,jdbcType=VARCHAR}
+	</select>
+	<!-- 获取最大显示顺序 -->
+	<select id="getMaxDisplayOrderBySubClassId" parameterType="java.lang.String" resultType="java.lang.Integer">
+	select max(displayOrder) from lysoft_sst_standardlist
+	where subClassId = #{subClassId,jdbcType=VARCHAR}
+	</select>
+	
+	<!-- 根据层项目编号和标准编号获取标准数量(判断标准存在不存在) -->
+	<select id="getCountByLayerItemId" parameterType="java.lang.String" resultType="java.lang.Integer">
+	select count(*) from lysoft_sst_standardlist where standardId = #{0} and layerItemId = #{1}
+	</select>
+	
+	<!-- 根据子分类编号和标准编号获取标准数量(判断标准存在不存在) -->
+	
+		<select id="getCountBySubClassId" parameterType="java.lang.String" resultType="java.lang.Integer">
+	select count(*) from lysoft_sst_standardlist where standardId = #{0} and subClassId = #{1}
+	</select>
+	
+	
+	
+</mapper>

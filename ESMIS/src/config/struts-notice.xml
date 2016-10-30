@@ -1,0 +1,70 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 通知公告 -->
+	<package name="notice" namespace="/notice" extends="GlobalInterceptor">
+		
+		<!-- 跳转列表页面-->
+		<action name="skipToNotice" class="com.lanyuan.actionapi.notice.ISkipForNotice" >
+			<result name="success">/notice/noticeList.jsp</result>
+			<result name="error" type="json"></result>
+		</action>
+		<!-- 跳转添加页面-->
+		<action name="skipToAdd" class="com.lanyuan.actionapi.notice.ISkipForNotice" method="add">
+			<result name="success">/notice/noticeAdd.jsp</result>
+			<result name="error" type="json"></result>
+		</action>
+		<!-- 跳转修改页面-->
+		<action name="skipToUpdate" class="com.lanyuan.actionapi.notice.ISkipForNotice" method="update">
+			<result name="success">/notice/noticeAdd.jsp</result>
+			<result name="error" type="json"></result>
+		</action>
+		<!-- 跳转后台详情页面-->
+		<action name="skipToDetail" class="com.lanyuan.actionapi.notice.ISkipForNotice" method="update">
+			<result name="success">/notice/noticeDetail.jsp</result>
+			<result name="error" type="json"></result>
+		</action>
+		<!-- 跳转前台详情页面-->
+		<action name="skipToDetailForFront" class="com.lanyuan.actionapi.notice.ISkipForNotice" method="detail">
+			<result name="success">/notice/noticeDetailForFront.jsp</result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- 添加-->
+		<action name="addNotice" class="com.lanyuan.actionapi.notice.IAddAction" >
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- 删除 -->
+		<action name="deleteNotice" class="com.lanyuan.actionapi.notice.IDeleteAction" >
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- 修改 -->
+		<action name="updateNotice" class="com.lanyuan.actionapi.notice.IUpdateAction" >
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- ID查询 -->
+		<action name="searchNoticeById" class="com.lanyuan.actionapi.notice.ISearchById" method="search" >
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- condition查询 -->
+		<action name="searchNoticeByCondition" class="com.lanyuan.actionapi.notice.ISearchByCondition"  method="search">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		<!-- condition分页查询 -->
+		<action name="searchNoticeByConditionAndPage" class="com.lanyuan.actionapi.notice.ISearchByConditionAndPage"  method="search">
+			<result name="success" type="json"></result>
+			<result name="error" type="json"></result>
+		</action>
+		
+		
+	</package>
+</struts>

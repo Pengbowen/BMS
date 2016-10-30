@@ -1,0 +1,20 @@
+/**
+*	json文件中的参数信息
+*	后台读取此类文件，完成导出功能
+*/
+
+modelId:模板ID
+
+fileName:下载的文件名称
+
+path:用到的excel模板文件路径
+
+starLine:从第excel第几行开始插入数据
+
+columnTitle:excel文件列头格式及名称字段
+
+columnTitle中定义的各个key和value通过后台读取后，设置excel的样式(width和align)
+
+startcolumn:插入到excel的第几列
+
+formatter:字段需要特殊处理

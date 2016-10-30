@@ -1,0 +1,252 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*brand style*/
+.tit{
+	height:40px;
+	line-height:40px;
+	font-size:14px;
+	font-weight:bold;
+	margin:0 10px;
+}
+.brand{
+	margin:0 10px;
+}
+.brand ul li{
+	clear:both;
+	overflow:hidden;
+	line-height:30px;
+	padding:10px 15px;
+	margin-bottom:15px;
+	border:1px solid #DADADA;
+}
+.brand ul li.brandLast{
+	border:none;
+	margin-top:-10px;
+}
+.brand ul li strong{
+	float:left;
+	width:2%;
+	text-align:center;
+	font-size:14px;
+	margin-right:3%;
+}
+.brand ul li i{
+	float:left;
+	width:85%;
+}
+.brand ul li i b{
+	float:left;
+	margin-right:40px;
+}
+.brand ul li i input{
+	float:left;
+	margin:8px 6px 0 0;
+	margin-top:6px\9; /*For IE9*/
+}
+.brand ul li em{
+	float:right;
+	width:10%;
+	text-align:right;
+}
+.brand ul li em input{
+	float:right;
+	margin:8px 6px 0 0;
+	margin-top:6px\9; /*For IE9*/
+}
+.brand ul li em font{
+	float:right;
+}
+.brand ul li.brandLast i{
+	width:50%;
+}
+.brand ul li.brandLast em{
+	width:40%;
+}
+.brand ul li em input.brandBtn{
+	width:70px;
+	height:26px;
+	margin-right:20px;
+	cursor:pointer;
+}
+
+
+/*price style*/
+.price{
+	margin:5px 10px;
+}
+.search{
+	clear:both;
+	overflow:hidden;
+	padding:15px 20px;
+	border:1px solid #DADADA;
+}
+.search i{
+	float:left;
+	margin-right:30px;
+}
+.text{
+	width:120px;
+	height:28px;
+	padding:0 2px;
+	border-radius:2px;
+	border:1px solid #DADADA;
+}
+.txt{
+	width:200px;
+	height:26px;
+	padding:0 2px;
+	border-radius:2px;
+	border:1px solid #DADADA;
+}
+.btn{
+	width:80px;
+	height:28px;
+	cursor:pointer;
+	margin-right:20px;
+}
+.priceInfo{
+	margin:10px 0;
+	border:1px solid #DADADA;
+}
+.priceInfo td{    
+	padding:5px 10px;
+	line-height:30px;
+}
+.infoTit{
+	font-weight:bold;
+}
+.infoText{
+	width:60%;
+	height:22px;
+	line-height:22px;
+	border-radius:2px;
+	border:1px solid #DADADA;
+}
+.infoBtn{
+	float:right;
+	margin:10px 20px 0 0;
+}
+
+/*edit style*/
+.edit{
+	margin:10px;
+}
+.editName{
+	height:30px;
+	border-bottom:1px solid #DADADA;
+}
+.editName li{
+	float:left;
+	width:96px;
+	font-size:14px;
+	line-height:30px;
+	cursor:pointer;
+	text-align:center;
+	margin: 0 5px;
+	border:1px solid #DADADA;
+	border-bottom:none;
+}
+.editName li.selected{
+	width:96px;
+	font-weight:bold;
+	margin:0 5px;
+}
+.editMain ul{
+	padding:20px;
+}
+.editMain ul li{
+	line-height:30px;
+	margin-bottom:5px;
+}
+
+
+/*store style*/
+.store{
+	padding:10px 20px;
+	margin:5px 10px;
+	border:1px solid #DADADA;
+}
+.store ul{
+	clear:both;
+	overflow:hidden;
+}
+.store ul li{
+	line-height:30px;
+	margin-top:10px;
+}
+.storeTexe01{
+	float:left;
+	margin:8px 6px 0 0;
+	margin-top:6px\9; /*For IE9*/
+}
+.storeTexe02{
+	color:#008000;
+	width:100px;
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+	outline:none;
+	border:none;
+	border-bottom:1px solid #008000;
+}
+.storeTexe03{
+	width:120px;
+	height:28px;
+	line-height:28px;
+	border-radius:2px;
+	border:1px solid #DADADA;
+}
+.storeTexe04{
+	width:80px;
+	height:28px;
+	line-height:28px;
+	margin-right:40px;
+	border-radius:2px;
+	border:1px solid #DADADA;
+}
+.factory{
+	margin:5px 10px;
+}
+.factory ul{
+	clear:both;
+	overflow:hidden;
+}
+.factory ul li{
+	line-height:30px;
+	margin-top:10px;
+}
+fieldset{
+	margin-bottom:10px;
+	border:1px solid #DADADA;
+}
+legend{
+	padding:0 10px;
+	font-weight:bold;
+}
+
+/*code style*/
+.title{
+	height:40px;
+	line-height:40px;
+	font-size:14px;
+	font-weight:bold;
+	margin:0 10px;
+	border-bottom:1px solid #DADADA;
+}
+.code{
+	padding-top:30px;
+}
+.code p{
+	padding-left:20px;
+	line-height:24px;
+}
+.code p.codeTit{
+	font-size:18px;
+	font-weight:bold;
+	padding:20px 0 10px 100px;
+}
+.codeBtn{
+	float:left;
+	margin:10px 20px 0 120px;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<!-- 提供查询下拉选项服务 -->
+	<package name="dictionary" namespace="/dictionary" extends="GlobalInterceptor">
+	  
+		<!-- 查询标准类别选项 -->
+		<action name="searchCategory" class="com.lanyuan.actionapi.dictionary.ISearchCategoryAction">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 查询专业选项 -->
+		<action name="searchApplicableMajor" class="com.lanyuan.actionapi.dictionary.ISearchMajorAction">
+		<result name="success" type="json"></result>
+		</action>	
+		<!-- 查询采标程度选项 -->
+		<action name="searchDegree" class="com.lanyuan.actionapi.dictionary.ISearchDegreeAction">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 查询国际标准选项 -->
+		<action name="searchAdoptIS" class="com.lanyuan.actionapi.dictionary.ISearchAdoptISAction">
+		<result name="success" type="json"></result>
+		</action>
+		<!-- 查询content -->
+		<action name="searchContent" class="com.lanyuan.actionapi.dictionary.ISearchContentAction">
+		<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>
