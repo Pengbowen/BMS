@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     This is my JSP page. <br>
     <ul>
     	<li><input type="text"/></li>
-    	<li><a href="<%=basePath%>/Student_add.action">添加学生</a></li>
+    	<li><a href="<%=basePath%>/Student_add.action">添加学生https://github.com/Pengbowen/BMS.git</a></li>
     	<li><a href="<%=basePath%>/Student_delete.action">删除学生</a></li>
     </ul>
     <form action="<%=basePath%>/Student_add" method="post">
